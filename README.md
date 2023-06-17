@@ -51,7 +51,7 @@ Then, you need to specify the output schema for the OpenAI API. For the previous
         }
 ```
 
-## Example I: automatic critique of movie revies 
+## Example I: automatic critique of movie revies 🎭
 
 Just execute the following command:
 
@@ -89,7 +89,7 @@ the corresponding json outputs are
 
 ```
 
-## Example II: evaluating helfulness of an answer to a question
+## Example II: evaluating helpfulness of an answer to a question 🤖
 
 We can slightly change the prompt template and function schema to evaluate the helpfulness of an answer to a question. For instance, for the question "What is the capital of France?", we evaluate the following answers:
 
