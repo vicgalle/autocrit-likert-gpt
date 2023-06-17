@@ -1,4 +1,4 @@
-# autocrit-likert-gpt
+# autocrit-likert-gpt ⚖️
 Automatic and zero-shot critique of outputs using the OpenAI API with json outputs.
 
 This repository showcases a generic technique to use the OpenAI API as an automatic evaluator for any given task, in a zero-shot manner. It relies in the `functions` argument to output a structured json.
