@@ -51,7 +51,7 @@ Then, you need to specify the output schema for the OpenAI API. For the previous
         }
 ```
 
-## Example: automatic critique of movie revies
+## Example I: automatic critique of movie revies 
 
 Just execute the following command:
 
@@ -63,10 +63,10 @@ For the following movie generations:
 
 ```json
 [
-            "The film was simply amazing. The acting was great, the plot was interesting, and the cinematography was beautiful. I would recommend this movie to anyone who enjoys a good drama.",
-            "I'm not sure if I liked this movie. It was a bit too long and the plot was confusing. The acting was good, but the cinematography was a bit too dark. I would recommend this movie to anyone who enjoys a good drama.",
-            "What a waste of time. The acting was terrible, the plot was boring, and the cinematography was awful. I would not recommend this movie to anyone.",
-        ]
+    "The film was simply amazing. The acting was great, the plot was interesting, and the cinematography was beautiful. I would recommend this movie to anyone who enjoys a good drama.",
+    "I'm not sure if I liked this movie. It was a bit too long and the plot was confusing. The acting was good, but the cinematography was a bit too dark. I would recommend this movie to anyone who enjoys a good drama.",
+    "What a waste of time. The acting was terrible, the plot was boring, and the cinematography was awful. I would not recommend this movie to anyone.",
+]
 ```
 
 the corresponding json outputs are 
@@ -87,4 +87,36 @@ the corresponding json outputs are
   }
 ]
 
+```
+
+## Example II: evaluating helfulness of an answer to a question
+
+We can slightly change the prompt template and function schema to evaluate the helpfulness of an answer to a question. For instance, for the question "What is the capital of France?", we evaluate the following answers:
+
+```json
+[
+    "Paris is the capital of France",
+    "Paris, but I'm not sure",
+    "Madrid",
+]
+```
+
+and the corresponding json outputs are
+
+
+```json
+[
+  {
+    "score": 4,
+    "reasoning": "The submission provides a clear and complete answer to the question. It states that Paris is the capital of France, which is correct. However, the response could be more concise and avoid unnecessary repetition."
+  },
+  {
+    "score": 3,
+    "reasoning": "The submission is somewhat helpful because it provides a relevant answer to the question, but it is not clear or complete. The submitter is unsure about the answer, which may not be useful for the user's needs."
+  },
+  {
+    "score": 1,
+    "reasoning": "The submission of 'Madrid' as the capital of France is completely irrelevant and incorrect. It does not provide any useful information to the user."
+  }
+]
 ```
